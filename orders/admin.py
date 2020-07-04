@@ -6,4 +6,4 @@ admin.site.register(Pizza)
 
 ### Super user
 ### username: adria
-### password: 1234
+### password: 1a2b3c4d
