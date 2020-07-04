@@ -1,46 +1,8 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-
-### Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
+db.sqlite3
 
 # C extensions
 *.so
@@ -59,6 +21,7 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -81,7 +44,8 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -89,6 +53,14 @@ coverage.xml
 
 # Django stuff:
 *.log
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
 
 # Sphinx documentation
 docs/_build/
@@ -96,101 +68,32 @@ docs/_build/
 # PyBuilder
 target/
 
-
-
-
-
-###################################################
-###################################################
-EXTRA
-###################################################
-###################################################
-# Django #
-*.log
-*.pot
-*.pyc
-__pycache__
-*__pycache__*
-db.sqlite3
-media
-
-# Backup files #
-*.bak
-
-# If you are using PyCharm #
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.xml
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/gradle.xml
-.idea/**/libraries
-*.iws /out/
-
-# Python #
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-.Python build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
 # Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
 .python-version
 
-# celery
-celerybeat-schedule.*
+# celery beat schedule file
+celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# dotenv
 .env
+
+# virtualenv
 .venv
-env/
 venv/
 ENV/
-env.bak/
-venv.bak/
+.vscode
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
 
 # mkdocs documentation
 /site
@@ -198,27 +101,13 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Sublime Text #
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
-# Package control specific files Package
-Control.last-run
-Control.ca-list
-Control.ca-bundle
-Control.system-ca-bundle
-GitHub.sublime-settings
-
-# Visual Studio Code #
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history
+.DS_Store
+*.sqlite3
+media/
+*.pyc
+*.db
+*.pid
+# django migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
