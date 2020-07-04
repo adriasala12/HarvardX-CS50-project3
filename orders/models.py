@@ -3,10 +3,8 @@ from multiselectfield import MultiSelectField
 
 # Create your models here.
 
-class Meal(models.Model):
-    pass
 
-class Pizza(Meal):
+class Pizza(models.Model):
 
     PIZZA_STYLE = [
         ('R', 'Regular'),

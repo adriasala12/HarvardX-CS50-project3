@@ -6,7 +6,7 @@ from .models import Meal
 def index(request):
 
     context = {
-        "meals": Meal.objects.all()
+        "meals": Pizza.objects.all()
     }
 
     return render(request, "index.html", context)
