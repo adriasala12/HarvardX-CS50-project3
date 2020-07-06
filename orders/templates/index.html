@@ -6,15 +6,81 @@
     </head>
     <body>
 
-        <h1>Meals</h1>
+        <h1>Our Menu</h1>
 
-	<ul>
-		{% for meal in meals %}
-		    <li> {{ meal }} </li>
-        {% empty %}
-            <li>List of meals is empty.</li>
-		{% endfor %}
-	</ul>
+        <!-- Option 1: Shows all categories even if empty -->
+        <!-- <h2>Regular Pizzas</h2>
+        <ul>
+            {% for item in rp %}
+    		    <li> {{ item }} </li>
+            {% empty %}
+                <li>No items to show under this category.</li>
+    		{% endfor %}
+        </ul> -->
+
+        <!-- Option 2: Only shows categories with elements -->
+        {% if rp|length != 0 %}
+            <h2>Regular Pizzas</h2>
+            <ul>
+                {% for item in rp %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if sp|length != 0 %}
+            <h2>Sicilian Pizzas</h2>
+            <ul>
+                {% for item in sp %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if to|length != 0 %}
+            <h2>Toppings</h2>
+            <ul>
+                {% for item in to %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if su|length != 0 %}
+            <h2>Subs</h2>
+            <ul>
+                {% for item in su %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if pa|length != 0 %}
+            <h2>Pasta</h2>
+            <ul>
+                {% for item in pa %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if sa|length != 0 %}
+            <h2>Salads</h2>
+            <ul>
+                {% for item in sa %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if dp|length != 0 %}
+            <h2>Dinner Plates</h2>
+            <ul>
+                {% for item in dp %}
+        		    <li> {{ item }} </li>
+        		{% endfor %}
+            </ul>
+        {% endif %}
 
     <a href='login'>Login</a>
 
