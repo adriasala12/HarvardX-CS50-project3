@@ -10,7 +10,13 @@ from .models import Meal
 def index(request):
 
 	context = {
-        "meals": Meal.objects.all()
+        'rp': Meal.objects.filter(category='RP'),
+        'sp': Meal.objects.filter(category='SP'),
+        'to': Meal.objects.filter(category='TO'),
+        'su': Meal.objects.filter(category='SU'),
+        'pa': Meal.objects.filter(category='PA'),
+        'sa': Meal.objects.filter(category='SA'),
+        'dp': Meal.objects.filter(category='DP')
     }
 
 	return render(request, "index.html", context)
