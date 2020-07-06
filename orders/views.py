@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .models import Pizza
+from .models import Meal
 
 
 # Create your views here.
@@ -10,7 +10,7 @@ from .models import Pizza
 def index(request):
 
 	context = {
-        "meals": Pizza.objects.all()
+        "meals": Meal.objects.all()
     }
 
 	return render(request, "index.html", context)
