@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Menu</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     </head>
     <body>
 
@@ -21,11 +24,42 @@
         <!-- Option 2: Only shows categories with elements -->
         {% if rp|length != 0 %}
             <h2>Regular Pizzas</h2>
-            <ul>
+
+            <div class="mx-auto m-3" style="max-width: 80%">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">REGULAR PIZZAS</th>
+                            <th scope="col">Small</th>
+                            <th scope="col">Large</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in rp %}
+                            <tr>
+                                <td>{{ item.name }}</td>
+                                {% if item.unique_price == none %}
+                                    <td>$ {{ item.small_price }}</td>
+                                    <td>$ {{ item.large_price }}</td>
+                                {% else %}
+                                    <td colspan="2">$ {{ item.unique_price }}</td>
+                                {% endif %}
+                            </tr>
+                		{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- <ul>
                 {% for item in rp %}
-        		    <li> {{ item }} </li>
+                    <div class="row mx-auto m-3" style="background-color: pink; max-width: 80%">
+                        <p class="col-5"> {{ item.name }} </p>
+                        <p class="col-2"> {{ item.small_price }} </p>
+                        <p class="col-2"> {{ item.large_price }} </p>
+                    </div>
         		{% endfor %}
-            </ul>
+            </ul> -->
         {% endif %}
 
         {% if sp|length != 0 %}
